@@ -1,18 +1,52 @@
-import { Heading } from './components/Heading';
+import { Container } from './components/Container';
+import { Menu } from './components/Menu';
+import { Logo } from './components/Logo';
+import { CountDown } from './components/CountDown';
 
 import './styles/theme.css';
 import './styles/global.css';
+import { DefaultInput } from './components/DefaultInput';
 
 export function App() {
   return (
     <>
-      <Heading />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
-        ratione, nesciunt nisi quasi ut hic vitae aliquam distinctio expedita
-        repudiandae deserunt quos, labore voluptate facilis recusandae quam rem
-        modi nam.
-      </p>
+      <Container>
+        <Logo />
+      </Container>
+
+      <Container>
+        <Menu />
+      </Container>
+
+      <Container>
+        <CountDown />
+      </Container>
+
+      <Container>
+        <form className='form' action=''>
+          <div className='formRow'>
+            <DefaultInput
+              labelText='task'
+              id='input'
+              type='text'
+              placeholder='digite algo'
+            />
+          </div>
+
+          <div className='formRow'>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className='formRow'>
+            <p>Ciclos</p>
+            <p>0 0 0 0 0 0</p>
+          </div>
+
+          <div className='formRow'>
+            <button>Enviar</button>
+          </div>
+        </form>
+      </Container>
     </>
   );
 }
